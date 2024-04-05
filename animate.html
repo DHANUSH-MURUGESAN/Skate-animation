@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Skate Animation</title>
+    <style>
+      body {
+        background: #7ff9ff;
+        overflow: hidden;
+        font-family: "Open Sans", sans-serif;
+      }
+:root {
+  --mountain: #8b5e1a;
+}
+.skateanimation {
+  margin: 0 auto;
+  position: relative;
+  display: block;
+  width: 600px;
+  height: 250px;
+  overflow: hidden;
+  border-bottom: 3px solid #fff;
+  color: #fff;
+}
+.mountain {
+  position: absolute;
+  right: -900px;
+  bottom: -20px;
+  width: 2px;
+  height: 2px;
+  box-shadow: 0 0 0 50px var(--mountain), 60px 50px 0 70px var(--mountain),
+    90px 90px 0 50px var(--mountain), 250px 250px 0 50px var(--mountain),
+    290px 320px 0 50px var(--mountain), 320px 400px 0 50px var(--mountain);
+  transform: rotate(130deg);
+  animation: mtn 20s linear;
+}
+.hill {
+  position: absolute;
+  right: -900px;
+  bottom: -50px;
+  width: 400px;
+  border-radius: 50%;
+  height: 20px;
+  box-shadow: 0 0 0 50px #146e22, -20px 0 0 20px #27a765, -90px 0 0 50px #1cc235,
+    250px 0 0 50px #38be4a, 290px 0 0 50px #1f7b3e, 620px 0 0 50px #28a255;
+  animation: hill 4s 2s linear infinite;
+}
+.rock {
+  margin-top: -17%;
+  height: 2%;
+  width: 5%;
+  bottom: -1px;
+  border-radius: 10px;
+  position: absolute;
+  background: #b43737;
+}
+.skate,
+.wheels,
+.wheels1 {
+  transition: all ease;
+  width: 85px;
+  margin-right: -60px;
+  bottom: 0px;
+  border: #001503;
+  border-radius: 50px;
+  right: 50%;
+  position: absolute;
+  background: #000000;
+}
+.skate {
+  background: rgb(224, 170, 43);
+  background-size: contain;
+  height: 10px;
+  margin-bottom: 15px;
+}
+.skate:before {
+  content: "";
+  position: absolute;
+  width: 20px;
+  box-shadow: -30px 28px 0 1.5px #bec707, -35px 10px 0 1.5px #fcfcfc;
+}
+.wheels {
+  background: #001503;
+  height: 20px;
+  width: 20px;
+  border-radius: 50px;
+  margin-bottom: 0px;
+}
+.wheels1{
+  background: #001503;
+  height: 20px;
+  width: 20px;
+  left: 280px;
+  border-radius: 50px;
+  margin-bottom: 0px;
+}
+.rock {
+  animation: rock 4s -0.53s linear infinite;
+}
+.skate {
+  animation: skate 4s 0.08s ease infinite;
+}
+.wheels {
+  animation: skate 4s 0.001s ease infinite;
+}
+.skate:before {
+  animation: wind 1.5s 0s ease infinite;
+}
+@keyframes rock {
+  0% {
+    right: -200px;
+  }
+  100% {
+    right: 2000px;
+  }
+}
+@keyframes skate {
+  0% {
+  }
+  6% {
+    transform: translateY(0px);
+  }
+  7% {
+    transform: translateY(-6px);
+  }
+  9% {
+    transform: translateY(0px);
+  }
+  10% {
+    transform: translateY(-1px);
+  }
+  11% {
+    transform: translateY(0px);
+  }
+  100% {
+  }
+}
+@keyframes wind {
+  0% {
+  }
+  70% {
+    transform: translateY(4px);
+  }
+  100% {
+  }
+}
+@keyframes mtn {
+  100% {
+    transform: translateX(-2000px) rotate(130deg);
+  }
+}
+@keyframes hill {
+  100% {
+    transform: translateX(-2000px);
+  }
+}
+    </style>
+  </head>
+  <body>
+    <!--html coode-->
+    <div class="skateanimation">
+      <div class="mountain"></div>
+      <div class="hill"></div>
+      <div class="rock"></div>
+      <div class="skate"></div>
+      <div class="wheels"></div>
+      <div class="wheels1"></div>
+    </div>
+  </body>
